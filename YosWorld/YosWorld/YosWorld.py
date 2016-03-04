@@ -12,66 +12,23 @@ class Simple_drawing_window(QWidget):
         self.pikachu = QImage("images/Singing_Pikachu_BW.png")
 
     def paintEvent(self,e):
-        p=QPainter()
+        p = QPainter()
         p.begin(self)
         p.setPen(QColor(0,0,0))
         p.setBrush(QColor(0,127,0))
-        p.drawPolygon([
-            QPoint(70,100),QPoint(100,110),
-            QPoint(130,100),QPoint(100,150),
-       ])
         p.setPen(QColor(255,127,0))
         p.setBrush(QColor(255,127,0))
-        p.drawPie(50,150,100,100,0,180*16)
-        p.drawPolygon([
-           QPoint(50,200),QPoint(150,200),QPoint(100,400),
-        ])
-        p.drawImage(QRect(200,100,320,320),self.rabbit)
+        p.drawImage(QRect(100,100,320,320),self.rabbit)
+        p.drawImage(QRect(200,200,320,320),self.mario)
+        p.drawImage(QRect(300,300,320,320),self.pikachu)
         p.end()
 
-    
-    def paintpikachu(self,e):
 
-        p=QPainter()
-        p.begin(self)
-        p.setPen(QColor(0,0,0))
-        p.setBrush(QColor(0,127,0))
-        p.drawPolygon([
-            QPoint(70,100),QPoint(100,110),
-            QPoint(130,100),QPoint(100,150),
-       ])
-        p.setPen(QColor(255,127,0))
-        p.setBrush(QColor(255,127,0))
-        p.drawPie(50,150,100,100,0,180*16)
-        p.drawPolygon([
-           QPoint(50,200),QPoint(150,200),QPoint(100,400),
-        ])
-        p.drawImage(QRect(200,100,320,320),self.pikachu)
-        p.end()
-
-    def mario(self,e):
-
-        p=QPainter()
-        p.begin(self)
-        p.setPen(QColor(0,0,0))
-        p.setBrush(QColor(0,127,0))
-        p.drawPolygon([
-            QPoint(70,100),QPoint(100,110),
-            QPoint(130,100),QPoint(100,150),
-       ])
-        p.setPen(QColor(255,127,0))
-        p.setBrush(QColor(255,127,0))
-        p.drawPie(50,150,100,100,0,180*16)
-        p.drawPolygon([
-           QPoint(50,200),QPoint(150,200),QPoint(100,400),
-        ])
-        p.drawImage(QRect(200,100,320,320),self.mario)
-        p.end()
 def main():
-    app = QtApplication(sys.argv)
+    app = QApplication(sys.argv)
     w = Simple_drawing_window()
     w.show()
-    return App.exec_()
+    return app.exec_()
 if __name__ == "__main__":
     sys.exit(main())
    
