@@ -5,7 +5,12 @@ class Simple_drawing_window(QWidget):
     def __init__(self):
         QWidget.__init__(self,None)
         self.setWindowTitle("Simple Drawing")
+<<<<<<< HEAD
         self.mario=QImage("mario.png")
+=======
+        self.rabbit=QImage("images/rabbit.png")
+        self.pikachu = QImage("images/Singing_Pikachu_BW.png")
+>>>>>>> origin/master
     def paintEvent(self,e):
         p=QPainter()
         p.begin(self)
@@ -23,7 +28,12 @@ class Simple_drawing_window(QWidget):
         ])
         p.drawImage(QRect(200,100,320,320),self.rabbit)
         p.end()
+<<<<<<< HEAD
     def paintmario(self,e):
+=======
+    
+    def paintpikachu(self,e):
+>>>>>>> origin/master
         p=QPainter()
         p.begin(self)
         p.setPen(QColor(0,0,0))
@@ -38,6 +48,7 @@ class Simple_drawing_window(QWidget):
         p.drawPolygon([
            QPoint(50,200),QPoint(150,200),QPoint(100,400),
         ])
+<<<<<<< HEAD
         p.drawImage(QRect(200,100,320,320),self.mario)
         p.end()
 
@@ -49,3 +60,7 @@ def main():
 if __name__ ="__main__":
     sys.exit(main())
    
+=======
+        p.drawImage(QRect(200,100,320,320),self.pikachu)
+        p.end()
+>>>>>>> origin/master
