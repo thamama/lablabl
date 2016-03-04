@@ -81,6 +81,6 @@ class MyWidget(QMainWindow):
         self.w.penColor = 2
 
 app = QApplication([])
-mainWin = MyWidget()
-mainWin.show()
+mainWins = MyWidget()
+mainWins.show()
 app.exec_()
